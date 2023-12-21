@@ -1,0 +1,24 @@
+{
+  "name": "ui-testing-hackathon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open": "cypress open",
+    "cypress:close": "cypress close"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Oodysseass/ui-testing-hackathon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Oodysseass/ui-testing-hackathon/issues"
+  },
+  "homepage": "https://github.com/Oodysseass/ui-testing-hackathon#readme",
+  "devDependencies": {
+    "cypress": "^13.6.1"
+  }
+}
