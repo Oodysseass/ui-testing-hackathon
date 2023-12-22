@@ -52,6 +52,18 @@ describe('US1: Add products in cart', () => {
     GetCartItem({ order: 0 }).should('have.text', `${firstKilos * firstTimes} Nos.`)
 
     GetCartItem({ order: 1 }).should('have.text', `${secondKilos * secondTimes} Nos.`)
+  })
 
+  it('Check price of cart', () => {
+    GetVeggieIncrementer({ veggie: 1 }).click()
+    GetVeggieIncrementer({ veggie: 1 }).click()
+    GetVeggieIncrementer({ veggie: 6}).click()
+    GetVeggieIncrementer({ veggie: 6}).click()
+
+    GetVeggie({ veggie: 1 }).find('button', 'ADD TO CART').click()
+    GetVeggie({ veggie: 6 }).find('button', 'ADD TO CART').click()
+    GetVeggie({ veggie: 1 }).find('button', 'ADD TO CART').click()
+
+    cy.get('.cart-info > table > tbody > :nth-child(2) > :nth-child(3) > strong').should('have.text', '768')
   })
 })
