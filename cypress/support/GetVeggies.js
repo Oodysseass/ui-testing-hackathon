@@ -1,17 +1,12 @@
 export const GetVeggie = ({ veggie }) => {
-    return cy.contains('.product-name', `${veggie} - 1 Kg`)
-        .parent('.product')
+    return cy.get(`.products > :nth-child(${veggie})`)
 }
 
 export const GetVeggieIncrementer = ({ veggie }) => {
-    return cy.contains('.product-name', `${veggie} - 1 Kg`)
-        .parent('.product')
-        .find('.increment')
+    return GetVeggie({ veggie }).find('.increment')
 }
 
 export const GetVeggieDecrementer = ({ veggie }) => {
-    return cy.contains('.product-name', `${veggie} - 1 Kg`)
-        .parent('.product')
-        .find('.decrement')
+    return GetVeggie({ veggie }).find('.decrement')
 }
 
